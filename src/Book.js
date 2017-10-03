@@ -5,7 +5,7 @@ class Book extends Component {
         // console.log();
         let book = this.props.book;
         return (
-            <div className="col-sm-4">
+            <div className="col">
                 <div className="card border-info" style={{ width: 20 + `rem` }}>
                     <div className="card-body">
                         <h4 className="card-title">{book.title}</h4>
