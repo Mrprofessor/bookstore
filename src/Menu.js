@@ -8,11 +8,11 @@ class Menu extends Component {
             <ul className="menuBar">
                 <li><a>Books</a></li>
                 <li><a>Add</a></li>
-                <li><a>asdfasd</a></li>
+                <li><a>LOL</a></li>
             </ul>
-            
         );
     }
 }
 
 export default Menu;
+

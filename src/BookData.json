@@ -1,0 +1,104 @@
+{
+    "Books" : [
+        {
+            "title" : "The Ministry of Utmost Happiness",
+            "author": "Arundhati Roy",
+            "ISBN"  : "201",
+            "pdate" : "",
+            "publisher": "",
+            "price" : "759",
+            "genre" : "",
+            "format": ""
+        },
+        {
+            "title": "Killers of the Flower Moon",
+            "author": "David Grann",
+            "ISBN": "202",
+            "pdate": "",
+            "publisher": "",
+            "price": "",
+            "genre": "699",
+            "format": ""
+        },
+        {
+            "title": "Beartown",
+            "author": "Fredrik Backman",
+            "ISBN": "203",
+            "pdate": "",
+            "publisher": "",
+            "price": "399",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "Exit West",
+            "author": "Mohsin Hamid",
+            "ISBN": "204",
+            "pdate": "",
+            "publisher": "",
+            "price": "399",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "Priestdaddy: A Memoir",
+            "author": "Patricia Lockwood",
+            "ISBN": "205",
+            "pdate": "",
+            "publisher": "",
+            "price": "259",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "You Don't Have to Say You Love Me",
+            "author": "Sherman Alexie",
+            "ISBN": "206",
+            "pdate": "",
+            "publisher": "",
+            "price": "899",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "Lincoln in the Bardo",
+            "author": "George Saunders",
+            "ISBN": "207",
+            "pdate": "",
+            "publisher": "",
+            "price": "599",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "The Impossible Fortress",
+            "author": "Jason Rekulak",
+            "ISBN": "208",
+            "pdate": "",
+            "publisher": "",
+            "price": "499",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "Hunger",
+            "author": "Roxane Gay",
+            "ISBN": "209",
+            "pdate": "",
+            "publisher": "",
+            "price": "849",
+            "genre": "",
+            "format": ""
+        },
+        {
+            "title": "Homo Deus: A Brief History of Tomorrow",
+            "author": "Yuval Noah Harari",
+            "ISBN": "210",
+            "pdate": "",
+            "publisher": "",
+            "price": "199",
+            "genre": "",
+            "format": ""
+        }
+    ]
+}
