@@ -8,7 +8,7 @@ class BookList extends Component {
     render() {
         console.log(BookData.Books);
         let books = BookData.Books;
-        let updatedArray = books.map(function (book) {
+        let bookArray = books.map(function (book) {
             return (
                 <Book key={book.ISBN} book={book} />
             );
@@ -16,7 +16,7 @@ class BookList extends Component {
         return (
             <div  className="container">
                 <div id="BookData" className="row align-items-center">
-                    {updatedArray} 
+                    {bookArray} 
                  </div>
             </div>
         );
