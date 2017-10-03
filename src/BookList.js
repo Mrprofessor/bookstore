@@ -18,6 +18,7 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import BookData from './BookData.json';
+import './BookList.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class BookList extends Component {
@@ -26,12 +27,14 @@ class BookList extends Component {
         let books = BookData.Books;
         let updatedArray = books.map(function (book) {
             return (
-                <Book book={book} />
+                <Book key={book.ISBN} book={book} />
             );
         });
         return (
-            <div className="container">
-                 {updatedArray} 
+            <div  className="container">
+                <div id="BookData" className="row align-items-start">
+                    {updatedArray} 
+                 </div>
             </div>
         );
     }

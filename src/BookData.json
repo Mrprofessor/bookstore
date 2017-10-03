@@ -8,7 +8,8 @@
             "publisher": "",
             "price" : "759",
             "genre" : "",
-            "format": ""
+            "format": "",
+            "description" : "Arundhati Roy's new novel, \"The Ministry of Utmost Happiness, \" is an intricate and graceful story of lives touched by magic, broken by tragedy, and mended with love.  It's an exceptional work of storytelling well worth the 20-year wait since \"The God of Small Things.\""
         },
         {
             "title": "Killers of the Flower Moon",
@@ -18,7 +19,8 @@
             "publisher": "",
             "price": "",
             "genre": "699",
-            "format": ""
+            "format": "",
+            "description": "Smart, taut, and gripping, Grann’s true-if-largely-unknown tale of big oil and serial murder on the Osage Indian Reservation in the 1920s is sobering for how it is at once unsurprising and unbelievable, full of the arrogance, and inhumanity that our society still has yet to overcome."
         },
         {
             "title": "Beartown",
@@ -28,7 +30,8 @@
             "publisher": "",
             "price": "399",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "The author of \"A Man Called\" sidesteps the predictable as he forges a new path of soul-searching and truth-telling in his gripping new novel about a small, hockey-mad town whose hopes and loyalties are torn apart by a crime no one wants to believe happened."
         },
         {
             "title": "Exit West",
@@ -38,7 +41,8 @@
             "publisher": "",
             "price": "399",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "In Mohsin Hamid’s futuristic novel, young lovers flee a war-torn Middle Eastern country to seek safety in the West, where cities like London have become embattled refugee settlements. Hamid (author of \"The Reluctant Fundamentalist\") has said that in some sense we are all refugees, and it’s easy to sympathize with his protagonists, who find their romance tested by their travails in exile."
         },
         {
             "title": "Priestdaddy: A Memoir",
@@ -48,7 +52,8 @@
             "publisher": "",
             "price": "259",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "When Patricia Lockwood temporarily moved back in with her parents—her father a Catholic priest who loves electric guitars; her mother focused on disasters and Satan worshippers—Lockwood returned as well to memories of her upbringing. Poetically precise language and darkly hilarious observations spark zingers that will make you rethink your own childhood indoctrinations."
         },
         {
             "title": "You Don't Have to Say You Love Me",
@@ -58,7 +63,8 @@
             "publisher": "",
             "price": "899",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "In this family memoir set mostly in the Spokane Indian Reservation, Alexie (of \"The Lone Ranger and Tonto Fistfight in Heaven\") connects, with humor and poignancy, the troubled life of his whip-smart, sometimes cruel mother to the history of oppression and violence suffered by the larger American Indian community."
         },
         {
             "title": "Lincoln in the Bardo",
@@ -68,7 +74,8 @@
             "publisher": "",
             "price": "599",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "Set in 1862, at a ghost-filled cemetery where President Lincoln’s beloved son Willie has been laid to rest, this first novel by acclaimed short-story-writer and essayist George Saunders (of \"Tenth of December\") will upend your expectations and leave you hooting with laughter when you aren’t wiping away your tears."
         },
         {
             "title": "The Impossible Fortress",
@@ -78,7 +85,8 @@
             "publisher": "",
             "price": "499",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "\"The Impossible Fortress\" is a coming-of-age story tucked inside a love letter to the strange and wonderful 1980s. It's one of those rare and special books where once you've finished it, you want all your friends to read it immediately. "
         },
         {
             "title": "Hunger",
@@ -88,7 +96,8 @@
             "publisher": "",
             "price": "849",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "In this brutally honest and brave memoir, the bestselling author of \"Bad Feminist\" recounts how a childhood sexual assault led her to purposely gain weight in order to be unseen and therefore feel safe; it’s a story that will inspire you to be more considerate of the bodies of others, and more accepting of your own."
         },
         {
             "title": "Homo Deus: A Brief History of Tomorrow",
@@ -98,7 +107,8 @@
             "publisher": "",
             "price": "199",
             "genre": "",
-            "format": ""
+            "format": "",
+            "description": "With \"Homo Deus,\" Yuval Noah Harari follows up his bestselling \"Sapiens\" — which looked back at the last 70,000 years of human evolution and history — with a look forward. In short, Where do we go from here?"
         }
     ]
 }
