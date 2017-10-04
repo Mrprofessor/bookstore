@@ -3,8 +3,7 @@
     position: fixed;
     cursor: pointer;
     display: inline-block;
-    border: none;
-    background-color: #d23f31;
+    border: none !important;
     border-radius: 999em;
     width: 56px;
     height: 56px;
@@ -26,6 +25,9 @@
     text-align: center;
     margin-top: -22px;
     color: #FFF;
+}
+.btn-round :active {
+    border: none !important;
 }
 .btn-round :hover {
 	-moz-transform: rotate(360deg);

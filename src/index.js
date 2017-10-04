@@ -9,5 +9,5 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<BookList />, document.getElementById('content'));
-ReactDOM.render(<AddBook />, document.getElementById('test'));
+ReactDOM.render(<AddBook />, document.getElementById('add'));
 registerServiceWorker();
