@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class BookList extends Component {
     render() {
-        console.log(BookData.Books);
+        // console.log(BookData.Books);
         let books = BookData.Books;
         let bookArray = books.map(function (book) {
             return (
@@ -18,6 +18,7 @@ class BookList extends Component {
                 <div id="BookData" className="row align-items-center">
                     {bookArray} 
                  </div>
+                <button title="Add book" class="btn-round blue"><span>+</span></button>
             </div>
         );
     }
