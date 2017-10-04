@@ -10,7 +10,7 @@ class Book extends Component {
                     <div className="card-body">
                         <h4 className="card-title">{book.title}</h4>
                         <h6 className="card-subtitle mb-2 text-muted">{book.author}</h6>
-                        <div className="card-text text-info paragraph">
+                        <div className="card-text text-info">
                             {book.description.substring(0, 150)}...
                             <BookModal book={book}/>                              
                         </div>
