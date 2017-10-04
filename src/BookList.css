@@ -4,6 +4,9 @@
 button {
     box-shadow: none !important ; 
 }
+.paragraph {
+    display: inline;
+}
 .btn-round {
     position: fixed;
     cursor: pointer;

@@ -19,17 +19,21 @@ class BookModal extends Component {
         // console.log("calling ShowBook");
         return (
             <div>
-                <CardLink href="#" className="card-link" onClick={this.toggle}>..more</CardLink>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} modalTransition={{ timeout: 200 }} 
-                backdropTransition={{ timeout: 10 }}className={this.props.className}>
+                <CardLink href="#" onClick={this.toggle}><h6>read more</h6></CardLink>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} backdropTransition={{ timeout: 10 }} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.props.book.title}</ModalHeader>
                     <ModalBody>
-                        <h6 className="card-subtitle mb-2 text-muted">{this.props.book.author}</h6>
+                        <h6 className="card-subtitle mb-2 ">
+                            Author : 
+                            <span className="text-muted">
+                                 {this.props.book.author}
+                            </span>
+                        </h6>
                         <hr />
                         {this.props.book.description}
                     </ModalBody>                       
                     <ModalFooter>
-                        <h6 className="card-subtitle mb-2 text-muted">Price :₹ {this.props.book.price}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted">Price : <b>₹</b> {this.props.book.price}</h6>
                     </ModalFooter>
                     <ModalFooter>                         
                         <Button color="secondary" onClick={this.toggle}>Close</Button>

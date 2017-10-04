@@ -18,7 +18,7 @@ class BookList extends Component {
                 <div id="BookData" className="row align-items-center">
                     {bookArray} 
                  </div>
-                <button title="Add book" class="btn-round blue"><span>+</span></button>
+                <button title="Add book" className="btn-round blue"><span>+</span></button>
             </div>
         );
     }

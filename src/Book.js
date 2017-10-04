@@ -5,18 +5,21 @@ class Book extends Component {
     render() {
         let book = this.props.book;
         return (
-            <div className="col">
-                <div className="card border-info" style={{ width: 20 + `rem` }}>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+                <div className="card border-info" style={{ width: 100 + `%` }}>
                     <div className="card-body">
                         <h4 className="card-title">{book.title}</h4>
                         <h6 className="card-subtitle mb-2 text-muted">{book.author}</h6>
-                        <div className="card-text">
+                        <div className="card-text text-info paragraph">
                             {book.description.substring(0, 150)}...
                             <BookModal book={book}/>                              
-                            {/* <a href="" className="card-link">..more</a> */}
                         </div>
-                         <a href="" className="card-link">Update book</a>
-                          <a href="" className="card-link">Delete book</a>   
+                        <div className="row justify-content-end">
+                            <button className="btn btn-warning btn-sm">Update</button>
+                            <button style={{ marginLeft: 10 }} className="btn btn-danger btn-sm" >
+                                Delete
+                            </button> 
+                        </div>
                     </div>
                 </div>
             </div>
