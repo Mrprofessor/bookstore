@@ -14,6 +14,7 @@ class BookList extends Component {
         };
 
         this.addBook = this.addBook.bind(this);
+        this.updateBook = this.updateBook.bind(this);
         this.deleteBook = this.deleteBook.bind(this);
         this.createItems = this.createItems.bind(this);
         
@@ -25,11 +26,22 @@ class BookList extends Component {
             books : currentBooks
         });
     }
+    updateBook(book) {
+        console.log("I am in BookList component");
+        let currentBooks = this.state.books;
+        for (let item in currentBooks) {
+            if(book.ISBN === currentBooks[item].ISBN) {
+                currentBooks[item] = book;
+            }
+        }
+        this.setState({
+            books: currentBooks
+        });
+    }
     deleteBook(key) {
         let filteredItems = this.state.books.filter(function (item) {
             if(item.ISBN === key) {
-                console.log(`Book Deleted`)
- 
+                console.log(`Book Deleted`);
             }
             return (item.ISBN !== key)
         });
@@ -41,7 +53,7 @@ class BookList extends Component {
     }
 
     createItems(book) {
-        return <Book key={book.ISBN} book={book} delete={this.deleteBook} />
+        return <Book key={book.ISBN} book={book} delete={this.deleteBook} update={this.updateBook} />
     }
     
     render() {

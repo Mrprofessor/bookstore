@@ -15,7 +15,7 @@ class UpdateBook extends Component {
         let singleBook = {
             "title": this._inputTitle.value,
             "author": this._inputAuthor.value,
-            "ISBN": Date.now(),
+            "ISBN": this.props.book.ISBN,
             "pdate": this._inputPdate.value,
             "publisher": this._inputPublisher.value,
             "price": this._inputPrice.value,
@@ -23,6 +23,7 @@ class UpdateBook extends Component {
             "format": this._inputFormat.value,
             "description": this._inputDesc.value
         };
+        this.props.update(singleBook);
         e.preventDefault();
         this.toggle();
     }

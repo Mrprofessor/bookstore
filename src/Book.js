@@ -11,6 +11,8 @@ class Book extends Component {
             modal: false
         };
         this.toggle = this.toggle.bind(this);
+        this.delete = this.delete.bind(this);
+        this.update = this.update.bind(this);
     }
 
     toggle() {
@@ -20,6 +22,10 @@ class Book extends Component {
     }
     delete(key) {
         this.props.delete(key);
+    }
+    update(book) {
+        console.log("I am in Book component");
+        this.props.update(book);
     }
     
     render() {
@@ -37,7 +43,7 @@ class Book extends Component {
 
                         <div className="row justify-content-end">
 
-                            <UpdateBook book={book}/>
+                            <UpdateBook book={book} update={this.update}/>
                             <Button style={{ marginLeft: 10 }} color="danger" onClick={this.toggle} size="sm">Delete</Button>
 
                             <Modal style={{ paddingTop: 15+`%`}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
