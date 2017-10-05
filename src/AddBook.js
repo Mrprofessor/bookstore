@@ -30,6 +30,7 @@ class AddBook extends Component {
             "description": this._inputDesc.value
         };
         console.log(singleBook);
+        this.props.add(singleBook);
         e.preventDefault();
         this.setState({
             modal: !this.state.modal

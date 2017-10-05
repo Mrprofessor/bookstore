@@ -13,11 +13,18 @@ class BookList extends Component {
             books: defaultBooks
         };
 
+        this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.createItems = this.createItems.bind(this);
         
     }
-    
+    addItem(book) {
+        let currentBooks = this.state.books;
+        currentBooks.push(book);
+        this.setState({
+            books : currentBooks
+        });
+    }
     deleteItem(key) {
         let filteredItems = this.state.books.filter(function (item) {
             if(item.ISBN === key) 
@@ -43,7 +50,7 @@ class BookList extends Component {
                 <div id="BookData" className="row align-items-center">
                     {bookArray} 
                  </div>
-                <AddBook />
+                <AddBook add={this.addItem}/>
             </div>
         );
     }
