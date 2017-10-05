@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Modal, ModalHeader, ModalBody } from 'reactstrap';
+import {  Modal, ModalHeader, ModalBody,Button } from 'reactstrap';
 import './AddBook.css';
 
 class AddBook extends Component {
@@ -110,8 +110,8 @@ class AddBook extends Component {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-info">Add</button>
-                                <button onClick={this.toggle} className="btn btn-warning">Cancel</button>
+                                <Button type="submit" color="info">Add</Button>
+                                <Button onClick={this.toggle} color="warning">Cancel</Button>
                             </div>
                         </form>
                     </ModalBody>

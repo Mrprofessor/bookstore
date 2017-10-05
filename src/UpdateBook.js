@@ -24,22 +24,23 @@ class UpdateBook extends Component {
             "description": this._inputDesc.value
         };
         this.props.update(singleBook);
-        e.preventDefault();
         this.toggle();
+        e.preventDefault();
     }
 
     toggle() {
         this.setState({
             modal: !this.state.modal
         });
+        console.log(this.state.modal);
     }
     render() {
         // console.log(this.props.book)
         return(
             <div>
                 <Button color="warning" onClick={this.toggle} size="sm">Update</Button>
-                <Modal style={{ paddingTop: 5 + `%` }} isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Upadte Book</ModalHeader>
+                <Modal style={{ paddingTop: 3 + `%` }} isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>Update Book</ModalHeader>
                     <ModalBody>
                         <form className="" onSubmit={this.updateItem}>
                             <div className="row form-group">
@@ -110,8 +111,8 @@ class UpdateBook extends Component {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-info">Update</button>
-                                <button onClick={this.toggle} className="btn btn-warning">Cancel</button>
+                                <Button type="submit" className="btn btn-info">Update</Button>
+                                <Button onClick={this.toggle} className="btn btn-warning">Cancel</Button>
                             </div>
                         </form>
                     </ModalBody>
