@@ -3,16 +3,38 @@ import Book from './Book';
 import BookData from './BookData.json';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-var books = (typeof localStorage["bookList"] !== "undefined") ? JSON.parse(localStorage["bookList"]) : BookData.Books;
+var defaultBooks = (typeof localStorage["bookList"] !== "undefined") ? JSON.parse(localStorage["bookList"]) : BookData.Books;
 
 class BookList extends Component {
-    render() {
-        console.log(books);
-        let bookArray = books.map(function (book) {
-            return (
-                <Book key={book.ISBN} book={book} />
-            );
+    constructor(props) {
+        super(props);
+        this.state = {
+            books: defaultBooks
+        };
+
+        this.deleteItem = this.deleteItem.bind(this);
+        this.createItems = this.createItems.bind(this);
+        
+    }
+    
+    deleteItem(key) {
+        let filteredItems = this.state.books.filter(function (item) {
+            return (item.ISBN !== key)
         });
+
+        this.setState({
+            books: filteredItems
+        });
+        
+    }
+
+    createItems(book) {
+        return <Book key={book.ISBN} book={book} delete={this.deleteItem} />
+    }
+    
+    render() {
+        console.log(this.state.books);
+        let bookArray = this.state.books.map(this.createItems);
         return (
             <div  className="container">
                 <div id="BookData" className="row align-items-center">
