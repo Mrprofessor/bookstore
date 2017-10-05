@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import BookModal from './BookModal';
+import UpdateBook from './UpdateBook';
+
 
 class Book extends Component {
     constructor(props) {
@@ -32,13 +34,12 @@ class Book extends Component {
                             {book.description.substring(0, 150)}...
                             <BookModal book={book}/>                              
                         </div>
-                        
+
                         <div className="row justify-content-end">
-                            <button className="btn btn-warning btn-sm">Update</button>
-                            {/* <button  onClick={(e) => this.delete(book.ISBN, e)} className="btn btn-danger btn-sm" >
-                                Delete
-                            </button>  */}
+
+                            <UpdateBook book={book}/>
                             <Button style={{ marginLeft: 10 }} color="danger" onClick={this.toggle} size="sm">Delete</Button>
+
                             <Modal style={{ paddingTop: 15+`%`}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                                 <ModalBody style={{ textAlign: "center"}}>
                                     <h3>Are you sure ?</h3>

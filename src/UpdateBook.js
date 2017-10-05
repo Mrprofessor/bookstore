@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import {  Modal, ModalHeader, ModalBody } from 'reactstrap';
-import './AddBook.css';
+import {Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
-class AddBook extends Component {
+class UpdateBook extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modal: false
+            modal : false
         };
         this.toggle = this.toggle.bind(this);
-        this.addItem = this.addItem.bind(this);
+        this.updateItem = this.updateItem.bind(this);
     }
 
-    addItem(e) {
+    updateItem(e) {
         let singleBook = {
             "title": this._inputTitle.value,
             "author": this._inputAuthor.value,
@@ -24,58 +23,57 @@ class AddBook extends Component {
             "format": this._inputFormat.value,
             "description": this._inputDesc.value
         };
-        console.log(singleBook);
-        this.props.add(singleBook);
         e.preventDefault();
         this.toggle();
     }
+
     toggle() {
         this.setState({
             modal: !this.state.modal
         });
     }
-    render () {
-        return (
+    render() {
+        // console.log(this.props.book)
+        return(
             <div>
-                  <button title="Add book" className="btn-round blue" onClick={this.toggle}><span>+</span></button>  
-                  {/* <Button className="btn-round blue" color="info" onClick={this.toggle}><span>+</span></Button>   */}
-                  <Modal style={{ paddingTop: 7 + `%` }} isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Add Book</ModalHeader>
+                <Button color="warning" onClick={this.toggle} size="sm">Update</Button>
+                <Modal style={{ paddingTop: 5 + `%` }} isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>Upadte Book</ModalHeader>
                     <ModalBody>
-                        <form className="" onSubmit={this.addItem}>
+                        <form className="" onSubmit={this.updateItem}>
                             <div className="row form-group">
                                 <label htmlFor="bookTitle" className="col-sm-2 col-form-label">Title</label>
                                 <div className="col col-sm-10">
                                     <input ref={(a) => this._inputTitle = a}
-                                    type="text" name="title" id="bookTitle" placeholder="Title of the book" className="form-control"></input>
+                                        type="text" name="title" id="bookTitle" defaultValue ={this.props.book.title} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="row form-group">
                                 <label htmlFor="bookAuthor" className="col-sm-2 col-form-label">Author</label>
                                 <div className="col col-sm-10">
                                     <input ref={(a) => this._inputAuthor = a}
-                                    type="text" name="author" id="bookAuthor" placeholder="Author" className="form-control"></input>
+                                        type="text" name="author" id="bookAuthor" defaultValue={this.props.book.author} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="row form-group">
                                 <label htmlFor="bookPublisher" className="col-sm-2 col-form-label">Publisher</label>
                                 <div className="col col-sm-10">
-                                    <input ref={(a) => this._inputPublisher = a} 
-                                    type="text" name="publisher" id="bookPublisher" placeholder="Publisher" className="form-control"></input>
+                                    <input ref={(a) => this._inputPublisher = a}
+                                        type="text" name="publisher" id="bookPublisher" defaultValue={this.props.book.publisher} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="row form-group">
                                 <label htmlFor="pDate" className="col-sm-2 col-form-label">Date</label>
                                 <div className="col col-sm-10">
-                                    <input ref={(a) => this._inputPdate = a} 
-                                    type="date" name="pdate" id="pDate" placeholder="Publication date" className="form-control"></input>
+                                    <input ref={(a) => this._inputPdate = a}
+                                        type="date" name="pdate" id="pDate" defaultValue={this.props.book.pdate} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="row form-group">
                                 <label htmlFor="bookPrice" className="col-sm-2 col-form-label">Price</label>
                                 <div className="col col-sm-10">
-                                    <input ref={(a) => this._inputPrice = a} 
-                                    type="number" name="price" id="bookPrice" placeholder=" ₹ Price" className="form-control"></input>
+                                    <input ref={(a) => this._inputPrice = a}
+                                        type="number" name="price" id="bookPrice" defaultValue={this.props.book.price} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="row form-group">
@@ -105,12 +103,13 @@ class AddBook extends Component {
                             <div className="row form-group">
                                 <label htmlFor="bookDescription" className="col-sm-2 col-form-label">Description</label>
                                 <div className="col col-sm-10">
-                                    <textarea ref={(a) => this._inputDesc = a} rows="5"
-                                    name="description" id="bookDescription" className="form-control"></textarea>
+                                    <textarea ref={(a) => this._inputDesc = a} 
+                                        defaultValue={this.props.book.description} rows="7"
+                                        name="description" id="bookDescription" className="form-control"></textarea>
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-info">Add</button>
+                                <button type="submit" className="btn btn-info">Update</button>
                                 <button onClick={this.toggle} className="btn btn-warning">Cancel</button>
                             </div>
                         </form>
@@ -121,13 +120,4 @@ class AddBook extends Component {
     }
 }
 
-export default AddBook;
-
-// •	Title
-// •	Author
-// •	ISBN
-// •	Publication Date
-// •	Publisher
-// •	Price
-// •	Genre(A list of Genres should be displayed for user to select)
-// •	Format(A list of format should be displayed for user to select)
+export default UpdateBook;
