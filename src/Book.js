@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, CardLink } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import BookModal from './BookModal';
 
 class Book extends Component {
@@ -19,6 +19,7 @@ class Book extends Component {
     delete(key) {
         this.props.delete(key);
     }
+    
     render() {
         let book = this.props.book;
         return (
@@ -31,6 +32,7 @@ class Book extends Component {
                             {book.description.substring(0, 150)}...
                             <BookModal book={book}/>                              
                         </div>
+                        
                         <div className="row justify-content-end">
                             <button className="btn btn-warning btn-sm">Update</button>
                             {/* <button  onClick={(e) => this.delete(book.ISBN, e)} className="btn btn-danger btn-sm" >
@@ -40,8 +42,9 @@ class Book extends Component {
                             <Modal style={{ paddingTop: 15+`%`}} isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                                 <ModalBody style={{ textAlign: "center"}}>
                                     <h3>Are you sure ?</h3>
+                                    <p className="text-danger"><b>Once you take the red pill..you can't go back.</b></p>
                                 </ModalBody>
-                                <ModalFooter style={{ textAlign: "center" }}>
+                                <ModalFooter>
                                     <Button color="danger" onClick={(e) => this.delete(book.ISBN, e)}>Yes</Button>
                                     <Button color="success" onClick={this.toggle}>No</Button>
                                 </ModalFooter>
@@ -50,7 +53,6 @@ class Book extends Component {
                     </div>
                 </div>
             </div>
-             
         );
     }
 }

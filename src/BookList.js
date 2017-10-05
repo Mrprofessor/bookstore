@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import BookData from './BookData.json';
+import AddBook from './AddBook';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 var defaultBooks = (typeof localStorage["bookList"] !== "undefined") ? JSON.parse(localStorage["bookList"]) : BookData.Books;
@@ -19,6 +20,8 @@ class BookList extends Component {
     
     deleteItem(key) {
         let filteredItems = this.state.books.filter(function (item) {
+            if(item.ISBN === key) 
+                console.log(item);
             return (item.ISBN !== key)
         });
 
@@ -40,6 +43,7 @@ class BookList extends Component {
                 <div id="BookData" className="row align-items-center">
                     {bookArray} 
                  </div>
+                <AddBook />
             </div>
         );
     }

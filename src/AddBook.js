@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup, Col } from 'reactstrap';
+import {  Modal, ModalHeader, ModalBody } from 'reactstrap';
 import './AddBook.css';
 
 class AddBook extends Component {
@@ -9,9 +9,28 @@ class AddBook extends Component {
             modal: false
         };
         this.toggle = this.toggle.bind(this);
+        this.addItem = this.addItem.bind(this);
     }
 
     toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+    addItem(e) {
+        let singleBook = {
+            "title": this._inputTitle.value,
+            "author": this._inputAuthor.value,
+            "ISBN": Date.now(),
+            "pdate": this._inputPdate.value,
+            "publisher": this._inputPublisher.value,
+            "price": this._inputPrice.value,
+            "genre": this._inputGenre.value,
+            "format": this._inputFormat.value,
+            "description": this._inputDesc.value
+        };
+        console.log(singleBook);
+        e.preventDefault();
         this.setState({
             modal: !this.state.modal
         });
@@ -21,76 +40,83 @@ class AddBook extends Component {
             <div>
                   <button title="Add book" className="btn-round blue" onClick={this.toggle}><span>+</span></button>  
                   {/* <Button className="btn-round blue" color="info" onClick={this.toggle}><span>+</span></Button>   */}
-                <Modal isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader className="text-center" toggle={this.toggle}>Add Book </ModalHeader>
+                  <Modal style={{ paddingTop: 7 + `%` }} isOpen={this.state.modal} fade={true} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>Add Book</ModalHeader>
                     <ModalBody>
-                        <Form>
-                            <FormGroup row> 
-                                <Label for="bookTitle" sm={2}>Title</Label>
-                                <Col sm={10}>
-                                    <Input type="text" name="title" id="bookTitle" placeholder="Title of the book"></Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookAuthor" sm={2}>Author</Label>
-                                <Col sm={10}>
-                                    <Input type="text" name="author" id="bookAuthor" placeholder="Author"></Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookPublisher" sm={2}>Publisher</Label>
-                                <Col sm={10}>
-                                    <Input type="text" name="publisher" id="bookPublisher" placeholder="Publisher"></Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="pDate" sm={2}>Date</Label>
-                                <Col sm={10}>
-                                    <Input type="date" name="pdate" id="pDate" placeholder="Publication date"></Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookPrice" sm={2}>Price</Label>
-                                <Col sm={10}>
-                                    <Input type="number" name="price" id="bookPrice" placeholder=" ₹ Price"></Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookGenre" sm={2}>Genre</Label>
-                                <Col sm={10}>
-                                    <Input type="select" name="genre" id="bookGenre">
+                        <form className="" onSubmit={this.addItem}>
+                            <div className="row form-group">
+                                <label htmlFor="bookTitle" className="col-sm-2 col-form-label">Title</label>
+                                <div className="col col-sm-10">
+                                    <input ref={(a) => this._inputTitle = a}
+                                    type="text" name="title" id="bookTitle" placeholder="Title of the book" className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookAuthor" className="col-sm-2 col-form-label">Author</label>
+                                <div className="col col-sm-10">
+                                    <input ref={(a) => this._inputAuthor = a}
+                                    type="text" name="author" id="bookAuthor" placeholder="Author" className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookPublisher" className="col-sm-2 col-form-label">Publisher</label>
+                                <div className="col col-sm-10">
+                                    <input ref={(a) => this._inputPublisher = a} 
+                                    type="text" name="publisher" id="bookPublisher" placeholder="Publisher" className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="pDate" className="col-sm-2 col-form-label">Date</label>
+                                <div className="col col-sm-10">
+                                    <input ref={(a) => this._inputPdate = a} 
+                                    type="date" name="pdate" id="pDate" placeholder="Publication date" className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookPrice" className="col-sm-2 col-form-label">Price</label>
+                                <div className="col col-sm-10">
+                                    <input ref={(a) => this._inputPrice = a} 
+                                    type="number" name="price" id="bookPrice" placeholder=" ₹ Price" className="form-control"></input>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookGenre" className="col-sm-2 col-form-label">Genre</label>
+                                <div className="col col-sm-10">
+                                    <select name="genre" id="bookGenre" className="form-control" ref={(a) => this._inputGenre = a} >
                                         <option>Fiction</option>
                                         <option>Romance</option>
                                         <option>History</option>
                                         <option>Westerns</option>
                                         <option>Fantasy</option>
-                                    </Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookFormat" sm={2}>Format</Label>
-                                <Col sm={10}>
-                                    <Input type="select" name="format" id="bookFormat">
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookFormat" className="col-sm-2 col-form-label">Format</label>
+                                <div className="col col-sm-10">
+                                    <select name="format" id="bookFormat" className="form-control" ref={(a) => this._inputFormat = a} >
                                         <option>PDF</option>
                                         <option>KINDLE</option>
                                         <option>EPUB</option>
                                         <option>MOBI</option>
                                         <option>DOCX</option>
-                                    </Input>
-                                </Col>
-                            </FormGroup>
-                            <FormGroup row>
-                                <Label for="bookDescription" sm={2}>Description</Label>
-                                <Col sm={10}>
-                                    <Input type="textarea" name="description" id="bookDescription"/>
-                                </Col>
-                            </FormGroup>
-                        </Form>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="row form-group">
+                                <label htmlFor="bookDescription" className="col-sm-2 col-form-label">Description</label>
+                                <div className="col col-sm-10">
+                                    <textarea ref={(a) => this._inputDesc = a} 
+                                    name="description" id="bookDescription" className="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="submit" className="btn btn-info">Add</button>
+                                <button onClick={this.toggle} className="btn btn-warning">Cancel</button>
+                            </div>
+                        </form>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button color="info" onClick={this.toggle}>Add</Button>{' '}
-                        <Button color="warning" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
+                    {/* <Button color="warning" onClick={this.toggle}>Cancel</Button> */}
                 </Modal>
             </div>  
         );

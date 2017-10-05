@@ -20,7 +20,7 @@ class BookModal extends Component {
         return (
             <div>
                 <CardLink href="#" onClick={this.toggle}><h6>read more</h6></CardLink>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} backdropTransition={{ timeout: 10 }} className={this.props.className}>
+                <Modal style={{paddingTop: 5 +`%`}} isOpen={this.state.modal} toggle={this.toggle} backdropTransition={{ timeout: 10 }} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.props.book.title}</ModalHeader>
                     <ModalBody>
                         <h6 className="card-subtitle mb-2 ">
