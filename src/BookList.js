@@ -55,12 +55,29 @@ class BookList extends Component {
             books: filteredItems
         }); 
     }
-    searchedItems(searchText) {
-        if(searchText && searchText.length !== 0) {
-            // console.log(searchText)
+    searchedItems(searchText, SearchGenre, SearchFormat) {
+        console.log(searchText, SearchGenre, SearchFormat);
+
+        if (searchText && searchText.length !== 0) {
             let filteredBooks = defaultBooks.filter(function(book) {
                 let bookText = book.title.substring(0, searchText.length);
-                if(bookText.toLowerCase() === searchText.toLowerCase()){
+                if(bookText.toLowerCase() === searchText.toLowerCase())
+                {
+                    if (SearchGenre !== 'GENRE') {
+                        if(SearchGenre === book.genre){
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    
+                    if (SearchFormat !== 'FORMAT') {
+                        if (SearchFormat === book.format) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
                     return true;
                 }
                 return 0;
@@ -68,6 +85,40 @@ class BookList extends Component {
             // console.log(filteredBooks);
             this.setState({
                 books : filteredBooks
+            })
+        } else if (searchText.length === 0 && SearchGenre !== "GENRE") {
+            let filteredBooks = defaultBooks.filter(function (book) {
+                if (SearchGenre === book.genre) {
+                    if (SearchFormat !== 'FORMAT') {
+                        if (SearchFormat === book.format) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                return 0;
+            });
+            this.setState({
+                books: filteredBooks
+            })
+        } else if (searchText.length === 0 && SearchFormat !== "FORMAT") {
+            let filteredBooks = defaultBooks.filter(function (book) {
+                if (SearchFormat === book.format) {
+                    if (SearchGenre !== 'GENRE') {
+                        if (SearchGenre === book.genre) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                return 0;
+            });
+            this.setState({
+                books: filteredBooks
             })
         } else {
             this.setState({
