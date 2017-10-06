@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Book from './Book';
 import BookData from './BookData.json';
+import SearchBar from './SearchBar'
+import Book from './Book';
 import AddBook from './AddBook';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,11 +18,13 @@ class BookList extends Component {
         this.updateBook = this.updateBook.bind(this);
         this.deleteBook = this.deleteBook.bind(this);
         this.createItems = this.createItems.bind(this);
+        this.searchedItems = this.searchedItems.bind(this);
         
     }
     addBook(book) {
         let currentBooks = this.state.books;
         currentBooks.push(book);
+        defaultBooks = currentBooks;
         this.setState({
             books : currentBooks
         });
@@ -34,6 +37,7 @@ class BookList extends Component {
                 currentBooks[item] = book;
             }
         }
+        defaultBooks = currentBooks;
         this.setState({
             books: currentBooks
         });
@@ -48,8 +52,27 @@ class BookList extends Component {
 
         this.setState({
             books: filteredItems
-        });
-        
+        }); 
+    }
+    searchedItems(searchText) {
+        if(searchText && searchText.length !== 0) {
+            // console.log(searchText)
+            let filteredBooks = defaultBooks.filter(function(book) {
+                let bookText = book.title.substring(0, searchText.length);
+                if(bookText.toLowerCase() === searchText.toLowerCase()){
+                    return true;
+                }
+                return 0;
+            });
+            // console.log(filteredBooks);
+            this.setState({
+                books : filteredBooks
+            })
+        } else {
+            this.setState({
+                books : defaultBooks
+            })
+        }
     }
 
     createItems(book) {
@@ -61,6 +84,7 @@ class BookList extends Component {
         let bookArray = this.state.books.map(this.createItems);
         return (
             <div  className="container">
+                <SearchBar books={this.state.books} search={this.searchedItems}/>
                 <div id="BookData" className="row align-items-center">
                     {bookArray} 
                  </div>
