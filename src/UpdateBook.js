@@ -32,7 +32,7 @@ class UpdateBook extends Component {
         this.setState({
             modal: !this.state.modal
         });
-        console.log(this.state.modal);
+        // console.log(this.state.modal);
     }
     render() {
         // console.log(this.props.book)

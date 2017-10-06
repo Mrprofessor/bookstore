@@ -30,11 +30,12 @@ class BookList extends Component {
         });
     }
     updateBook(book) {
-        console.log("I am in BookList component");
+        // console.log("I am in BookList component");
         let currentBooks = this.state.books;
         for (let item in currentBooks) {
             if(book.ISBN === currentBooks[item].ISBN) {
                 currentBooks[item] = book;
+                console.log(book);
             }
         }
         defaultBooks = currentBooks;

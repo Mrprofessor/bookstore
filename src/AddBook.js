@@ -123,11 +123,4 @@ class AddBook extends Component {
 
 export default AddBook;
 
-// •	Title
-// •	Author
-// •	ISBN
-// •	Publication Date
-// •	Publisher
-// •	Price
-// •	Genre(A list of Genres should be displayed for user to select)
-// •	Format(A list of format should be displayed for user to select)
+

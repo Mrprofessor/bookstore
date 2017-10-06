@@ -24,7 +24,7 @@ class Book extends Component {
         this.props.delete(key);
     }
     update(book) {
-        console.log("I am in Book component");
+        // console.log("I am in Book component");
         this.props.update(book);
     }
     
