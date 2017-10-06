@@ -24,11 +24,11 @@ class SearchBar extends Component {
     render() {
         return(
             <nav className="navbar navbar-light bg-light row">
-                <div className="col-lg-6">
+                <div className="col-md-6" style={{marginBottom : 10}}>
                     <input className="form-control mr-sm-2" onChange={this.changeSearch} ref={(a) => this._inputSearch = a}
                         type="text" placeholder="Search Books" aria-label="Search" />
                 </div>
-                <div className="col-lg-3">
+                <div className="col-md-3" style={{ marginBottom: 10 }}>
                     <select name="genre" id="bookGenre" className="form-control" onChange={this.changeFilterGenere}
                     ref={(a) => this._inputGenre = a} >
 
@@ -40,7 +40,7 @@ class SearchBar extends Component {
                         <option>Fantasy</option>
                     </select>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-md-3">
                     <select name="format" id="bookFormat" className="form-control" onChange={this.changeFilterFormat}
                     ref={(a) => this._inputFormat = a} >
 
